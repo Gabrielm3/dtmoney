@@ -1,0 +1,1 @@
+export let as = 2
