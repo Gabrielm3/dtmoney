@@ -9,7 +9,6 @@ export function TransactionsTable(){
   }, [])
 
 
-
   return (
     <Container>
       <table>
