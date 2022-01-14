@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import Modal from 'react-modal'
 import fecharModal from '../../assets/close.svg'
 import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
-import { Container, TransactionTypeContainer } from './styles'
+import { Container, RadioBox, TransactionTypeContainer } from './styles'
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -10,6 +11,8 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal({isOpen, onRequestClose }:NewTransactionModalProps){
+  const [type, setType] = useState('deposito')
+  
   return(
     <Modal 
     isOpen={isOpen}
@@ -28,19 +31,23 @@ export function NewTransactionModal({isOpen, onRequestClose }:NewTransactionModa
       <input type="number" placeholder="Valor"></input>
       
       <TransactionTypeContainer>
-        <button
+        <RadioBox
           type="button"
+          onClick={() => { setType('deposito')}}
+          isActive={type === 'deposito'}
         >
           <img src={incomeImg} alt="Entrada"/>
           <span>Entrada</span>
-        </button>
+        </RadioBox>
         
-        <button
+        <RadioBox
           type="button"
+          onClick={() => { setType('saida')}}
+          isActive={type === 'saida'}
         >
           <img src={outcomeImg} alt="Saida"/>
           <span>Saida</span>
-        </button>
+        </RadioBox>
 
       </TransactionTypeContainer>
 
