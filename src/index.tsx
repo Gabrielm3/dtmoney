@@ -23,7 +23,7 @@ createServer({
         {
           id: 2,
           title: 'Aluguel',
-          type: 'Saida',
+          type: 'saida',
           category: 'Casa',
           amount: 1120,
           createdAt: new Date('2021-05-13 11:00:00')

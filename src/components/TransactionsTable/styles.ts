@@ -26,7 +26,7 @@ export const Container = styled.div`
         color: var(--text-title)
       }
 
-      &.entrada {
+      &.deposito {
         color: var(--green)
       }
 
